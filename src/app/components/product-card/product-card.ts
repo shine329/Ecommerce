@@ -1,14 +1,18 @@
-import { Component, input, output } from '@angular/core';
+import { Component, computed, inject, input, output } from '@angular/core';
 import { Product } from '../../models/product';
 import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
+import { EcommerceStore } from '../../ecommerce-store';
 
 @Component({
   selector: 'app-product-card',
   imports: [MatIcon,MatButton],
   template: `
-    <div class="bg-white cursor-poiinter rounded-xl shadow-lg overflow-hidden flex flex-col h-full">
+    <div class="relative bg-white cursor-poiinter rounded-xl shadow-lg overflow-hidden flex flex-col h-full">
+
 <img [src]="product().imageUrl" alt="" class="w-full h-[300px] object-cover rounded-t-xl">
+
+<ng-content />
 <div class="flex flex-col flex-1 p-3">
   <h3 class="text-lg font-semibold text-gray-900 mb-2 loading-tight">
     {{product().name}}
@@ -25,7 +29,7 @@ import { MatIcon } from '@angular/material/icon';
     <span class="text-2xl font-bold text-gray-900">
       \₹{{[product().price]}}
     </span>
-    <button matButton="filled" class="flex items-center gap-2" (click)="addToCartClicked.emit(product())" >
+    <button matButton="filled" class="flex items-center gap-2"  >
       <mat-icon>shopping_cart</mat-icon>
       Add to Cart
     </button>
@@ -37,9 +41,6 @@ import { MatIcon } from '@angular/material/icon';
 })
 export class ProductCard {
 product =input.required<Product>()
-ngOnInit(){
-  console.log("product",this.product());
-  
-}
-addToCartClicked =output<Product>()
+store = inject(EcommerceStore)
+
 }
