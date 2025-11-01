@@ -29,7 +29,7 @@ import { EcommerceStore } from '../../ecommerce-store';
     <span class="text-2xl font-bold text-gray-900">
       \₹{{[product().price]}}
     </span>
-    <button matButton="filled" class="flex items-center gap-2"  >
+    <button matButton="filled" class="flex items-center gap-2" (click)="store.addToCart(product(),1)"  >
       <mat-icon>shopping_cart</mat-icon>
       Add to Cart
     </button>

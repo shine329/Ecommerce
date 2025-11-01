@@ -13,7 +13,7 @@ import { RouterLink } from "@angular/router";
       <button matIconButton routerLink="/wishlist" [matBadge]="store.wishlistCount()" [matBadgeHidden]="store.wishlistCount() === 0">
         <mat-icon>favorite</mat-icon>
       </button>
-      <button matIconButton   >
+      <button matIconButton routerLink="/view-cart"  [matBadge]="store.cartItemsCount()" [matBadgeHidden]="store.cartItemsCount() === 0" >
         <mat-icon>shopping_cart</mat-icon>
       </button>
       <button matButton>Sign In</button>
