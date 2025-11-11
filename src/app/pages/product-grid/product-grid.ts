@@ -15,6 +15,7 @@ import { RouterLink } from '@angular/router';
 import { TitleCasePipe } from '@angular/common';
 import { EcommerceStore } from '../../ecommerce-store';
 import { ToggleWishlistButton } from '../../components/toggle-wishlist-button/toggle-wishlist-button';
+import { Offers } from "../offers/offers";
 @Component({
   selector: 'app-product-grid',
   imports: [
@@ -28,7 +29,8 @@ import { ToggleWishlistButton } from '../../components/toggle-wishlist-button/to
     RouterLink,
     TitleCasePipe,
     ToggleWishlistButton,
-  ],
+    Offers
+],
   template: `
     <mat-sidenav-container class="h-full">
       <mat-sidenav mode="side" opened="true">
@@ -39,7 +41,7 @@ import { ToggleWishlistButton } from '../../components/toggle-wishlist-button/to
             @for (cat of categories(); track cat) {
             <mat-list-item
               [activated]="cat === category()"
-              class="my-2"
+              class="my-2 list-item"
               [routerLink]="['/products', cat]"
             >
               <span
@@ -54,6 +56,7 @@ import { ToggleWishlistButton } from '../../components/toggle-wishlist-button/to
         </div>
       </mat-sidenav>
       <mat-sidenav-content class="bg-grey-100 p-6 h-full">
+        <app-offers />
         <h1 class="text-2xl font-bold text-gray-900 mb-1">
           {{ category() | titlecase }}
         </h1>
