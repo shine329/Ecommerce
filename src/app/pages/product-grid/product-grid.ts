@@ -73,6 +73,7 @@ import { Offers } from "../offers/offers";
             <app-toggle-wishlist-button
               class="!absolute z-10 top-3 right-3 "
               [product]="product"
+              [style.view-transition-name]="'wishlist-button-'+product.id" 
             />
           </app-product-card>
           }

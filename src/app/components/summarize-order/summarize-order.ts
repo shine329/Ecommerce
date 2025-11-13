@@ -16,15 +16,15 @@ import { EcommerceStore } from '../../ecommerce-store';
 <div class="space-y-3 text-lg pt-4">
 <div class="flex justify-between">
   <span>Subtotal</span>
-  <span>\$ {{subTotal()}}</span>
+  <span>\₹ {{subTotal()}}</span>
 </div>
 <div class="flex justify-between">
   <span>Tax</span>
-  <span>\$ {{tax()}}</span>
+  <span>\₹ {{tax()}}</span>
 </div>
 <div class="flex justify-between border-t pt-3 font-bold text-lg">
   <span>Total</span>
-  <span>\$ {{total()}}</span>
+  <span>\₹ {{total()}}</span>
 </div>
 </div>
 <ng-content select="[actionButtons]" />
