@@ -19,8 +19,8 @@ import { MatIcon } from "@angular/material/icon";
 }
   `,
   styles: `
-  host: {
-    class:'block'
+  :host {
+    class:'block';
   }`
 })
 export class StockStatus {
