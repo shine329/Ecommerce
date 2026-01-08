@@ -557,14 +557,14 @@ export const EcommerceStore = signalStore(
     writeReview: false,
   } as EcommerceState),
 
-  withStorageSync({
-    key: 'life-Style',
-    select: ({ wishlistItems, cartItems, user }) => ({
-      wishlistItems,
-      cartItems,
-      user,
-    }),
-  }),
+  // withStorageSync({
+  //   key: 'life-Style',
+  //   select: ({ wishlistItems, cartItems, user }) => ({
+  //     wishlistItems,
+  //     cartItems,
+  //     user,
+  //   }),
+  // }),
 
   withComputed(
     ({ category, products, wishlistItems, cartItems, selectedProductId }) => ({
